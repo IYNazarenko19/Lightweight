@@ -6,9 +6,7 @@
    <pre>
    <h1> 📥Installing📥 </h1>
    <p> To install our project on your machine you just need to clone it. This can be done by : </p>
-   </pre>
-   <pre>
-   git clone https://github.com/IYNazarenko19/Lightweight.git
+   <p> git clone https://github.com/IYNazarenko19/Lightweight.git</p>
    </pre>
    <pre>
    <h1> 🔧Used technologies🔧 </h1>
@@ -26,4 +24,3 @@
    <p>Dobrin Peychev - <a href = "https://github.com/DIPeychev19"> DIPeychev19 </a> - QA engineer </p>
    <p>Zlatomir Kostadinov - <a href = "https://github.com/ZGKostadinov19"> ZGKostadinov19 </a> - Front-end Developer </p>
    </pre>
-  
