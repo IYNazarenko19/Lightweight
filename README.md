@@ -1,12 +1,12 @@
 
    <h1> 📒About📒 </h1>
-   <p>
+   <h2>
     Our game is based on a labyrinth which you have to complete in order to win.
-   </p>
+   </h2>
    <pre>
    <h1> 📥Installing📥 </h1>
-   <p> To install our project on your machine you just need to clone it. This can be done by : </p>
-   <p> git clone https://github.com/IYNazarenko19/Lightweight.git</p>
+   <h3> To install our project on your machine you just need to clone it. This can be done by : </h3>
+   <h4> git clone https://github.com/IYNazarenko19/Lightweight.git</h4>
    </pre>
    <pre>
    <h1> 🔧Used technologies🔧 </h1>
