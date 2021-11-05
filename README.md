@@ -18,9 +18,9 @@
    </pre>
    <pre>
    <h1> 👥Members👥 </h1>
-   <p>Yoan Tanev - <a href = "https://github.com/YHTanev19"> YHTanev19</a> - Scrum trainer </p>
-   <p>Ivan Nazarenko - <a href = "https://github.com/IYNazarenko19"> IYNazarenko19</a> - Back-end Developer </p>
-   <p>Teodor Todorov - <a href = "https://github.com/TYTodorov19"> TYTodorov19</a> - QA engineer </p>
-   <p>Dobrin Peychev - <a href = "https://github.com/DIPeychev19"> DIPeychev19 </a> - QA engineer </p>
-   <p>Zlatomir Kostadinov - <a href = "https://github.com/ZGKostadinov19"> ZGKostadinov19 </a> - Front-end Developer </p>
+   <p><b>Yoan Tanev </b>-<a href = "https://github.com/YHTanev19"> YHTanev19</a> - <em>Scrum trainer</em> </p>
+   <p><b>Ivan Nazarenko </b>-<a href = "https://github.com/IYNazarenko19"> IYNazarenko19</a> - <em>Back-end Developer</em> </p>
+   <p><b>Teodor Todorov </b>-<a href = "https://github.com/TYTodorov19"> TYTodorov19</a> - <em>Front-end Developer</em> </p>
+   <p><b>Dobrin Peychev </b>-<a href = "https://github.com/DIPeychev19"> DIPeychev19 </a> - <em>QA engineer</em> </p>
+   <p><b>Zlatomir Kostadinov </b>-<a href = "https://github.com/ZGKostadinov19"> ZGKostadinov19 </a> - <em>Back-end Developer</em> </p>
    </pre>
