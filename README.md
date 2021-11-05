@@ -1,7 +1,7 @@
 
    <h1> 📒About📒 </h1>
    <h2>
-    Our game is based on a labyrinth which you have to complete in order to win.
+    Our game is based on a maze which you have to complete in order to win.
    </h2>
    <pre>
    <h1> 📥Installing📥 </h1>
