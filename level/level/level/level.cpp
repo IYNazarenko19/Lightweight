@@ -76,3 +76,16 @@ bool CheckFinish(int& X, int& Y) {
     }
     return false;
 }
+int main() {
+
+    int PlposX = 1;
+    int PlposY = 0;
+    int movement = 0;
+
+    while (!CheckFinish(PlposX, PlposY)) {
+        DisplayPlayer(PlposX, PlposY);
+        MoveHandle(movement, PlposX, PlposY);
+        ClearArea();
+    }
+    cout << "You win";
+}
