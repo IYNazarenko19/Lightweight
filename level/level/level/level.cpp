@@ -1,14 +1,15 @@
-#include<iostream>
+#include <iostream>
+#include<iomanip>
 #include<conio.h>
 #include<stdlib.h>
-
+#include <string>
+#include <windows.h>
 using namespace std;
 
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
-
 
 char maze[10][10] = { {'#','=','#','#','#','#','#','#','#','#'},
                             {'#','.','.','.','.','#','#','#','#','#'},
@@ -24,6 +25,7 @@ char maze[10][10] = { {'#','=','#','#','#','#','#','#','#','#'},
 void ClearArea() {
     system("CLS");
 }
+
 void MoveHandle(int move, int& X, int& Y) {
     switch (move = _getch()) {
     case KEY_UP:
@@ -58,6 +60,7 @@ void MoveHandle(int move, int& X, int& Y) {
         }
     }
 }
+
 void DisplayPlayer(int& X, int& Y) {
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
@@ -70,14 +73,16 @@ void DisplayPlayer(int& X, int& Y) {
         cout << endl;
     }
 }
+
 bool CheckFinish(int& X, int& Y) {
     if (X == 7 && Y == 9) {
         return true;
     }
     return false;
 }
-int main() {
 
+int main()
+{
     cout << "                        ____    ____       ___    ___    ___    _____  ____    ____ _____" << endl;
     cout << "   /\\  /\\        /\\        /   |          |   |  |   |  |   |     |   |       |       |" << endl;
     cout << "  /  \\/  \\      /__\\      /    |____      |___|  |___|  |   |     |   |____   |       |" << endl;
@@ -85,14 +90,83 @@ int main() {
     cout << "/          \\  /      \\  /____  |____      |      | \\    |___|   |_|   |____   |____   |" << endl;
     Sleep(3000);
 
-    int PlposX = 1;
-    int PlposY = 0;
-    int movement = 0;
+    string Menu[3] = { "Start Game", "Options", "Exit" };
+    int pointer = 0;
 
-    while (!CheckFinish(PlposX, PlposY)) {
-        DisplayPlayer(PlposX, PlposY);
-        MoveHandle(movement, PlposX, PlposY);
-        ClearArea();
+    while (true)
+    {
+        system("cls");
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+        cout << "Main Menu\n\n";
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (i == pointer)
+            {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+                cout << Menu[i] << endl;
+            }
+            else
+            {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+                cout << Menu[i] << endl;
+            }
+        }
+
+        while (true)
+        {
+            if (GetAsyncKeyState(VK_UP) != 0)
+            {
+                pointer -= 1;
+                if (pointer == -1)
+                {
+                    pointer = 2;
+                }
+                break;
+            }
+            else if (GetAsyncKeyState(VK_DOWN) != 0)
+            {
+                pointer += 1;
+                if (pointer == 3)
+                {
+                    pointer = 0;
+                }
+                break;
+            }
+            else if (GetAsyncKeyState(VK_RETURN) != 0)
+            {
+                switch (pointer)
+                {
+                case 0:
+                {
+                    int PlposX = 1;
+                    int PlposY = 0;
+                    int movement = 0;
+
+                    while (!CheckFinish(PlposX, PlposY)) {
+                        DisplayPlayer(PlposX, PlposY);
+                        MoveHandle(movement, PlposX, PlposY);
+                        ClearArea();
+                    }
+                    cout << "You win";
+                    Sleep(3000);
+                } break;
+
+                case 1:
+                {
+                    cout << "\n\n\nThis is the options...";
+                    Sleep(3000);
+                } break;
+
+                case 2:
+                {
+                    return 0;
+                } break;
+                }
+
+                break;
+            }
+        }
     }
-    cout << "You win";
 }
