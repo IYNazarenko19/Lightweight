@@ -78,6 +78,13 @@ bool CheckFinish(int& X, int& Y) {
 }
 int main() {
 
+    cout << "                        ____    ____       ___    ___    ___    _____  ____    ____ _____" << endl;
+    cout << "   /\\  /\\        /\\        /   |          |   |  |   |  |   |     |   |       |       |" << endl;
+    cout << "  /  \\/  \\      /__\\      /    |____      |___|  |___|  |   |     |   |____   |       |" << endl;
+    cout << " /        \\    /    \\    /     |          |      |\\     |   |   _ |   |       |       | " << endl;
+    cout << "/          \\  /      \\  /____  |____      |      | \\    |___|   |_|   |____   |____   |" << endl;
+    Sleep(3000);
+
     int PlposX = 1;
     int PlposY = 0;
     int movement = 0;
