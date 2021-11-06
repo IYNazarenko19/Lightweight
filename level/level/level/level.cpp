@@ -70,3 +70,9 @@ void DisplayPlayer(int& X, int& Y) {
         cout << endl;
     }
 }
+bool CheckFinish(int& X, int& Y) {
+    if (X == 7 && Y == 9) {
+        return true;
+    }
+    return false;
+}
