@@ -58,3 +58,15 @@ void MoveHandle(int move, int& X, int& Y) {
         }
     }
 }
+void DisplayPlayer(int& X, int& Y) {
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (j == X && i == Y) {
+                cout << "+ ";
+                continue;
+            }
+            cout << maze[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
