@@ -159,7 +159,17 @@ int main()
 
                 case 1:
                 {
-                    cout << "\n\n\nThis is the options...";
+                    cout << setw(73) << "This is the settings/instructions" << endl << endl;;
+                    cout << setw(74) << "Use the arrow key LEFT to move LEFT;" << endl;
+                    cout << setw(75) << "Use the arrow key RIGHT to move RIGHT;" << endl;
+                    cout << setw(72) << "Use the arrow key UP to move UP;" << endl;
+                    cout << setw(74) << "Use the arrow key DOWN to move DOWN;" << endl << endl;
+                    cout << setw(87) << "Your starting and finishing positions are marked with '=';" << endl;
+                    cout << setw(74) << "Your player is marked with '+';" << endl;
+                    cout << setw(78) << "The walls of the maze are marked with '#';" << endl;
+                    cout << setw(74) << "Your task is to complete the maze;" << endl;
+                    cout << setw(61) << "Have fun!" << endl;
+
                     Sleep(15000);
                 } break;
 
