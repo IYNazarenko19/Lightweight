@@ -88,55 +88,59 @@ int main()
     cout << "  /  \\/  \\      /__\\      /    |____      |___|  |___|  |   |     |   |____   |       |" << endl;
     cout << " /        \\    /    \\    /     |          |      |\\     |   |   _ |   |       |       | " << endl;
     cout << "/          \\  /      \\  /____  |____      |      | \\    |___|   |_|   |____   |____   |" << endl;
-    Sleep(3000);
+    Sleep(00);
 
-    string Menu[3] = { "Start Game", "Options", "Exit" };
-    int pointer = 0;
+    string Menu[3] = { "----> START GAME", "----> SETTINGS", "----> EXIT" };
+    int p = 0;
 
     while (true)
     {
         system("cls");
 
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-        cout << "Main Menu\n\n";
+        cout << setw(80) << "            _____               ___       " << endl;
+        cout << setw(85) << "|\\/|   /\\     |   |\\  |   |\\/| |    |\\  | |   |" << endl;
+        cout << setw(85) << "|  |  /--\\    |   | \\ |   |  | |--- | \\ | |   |" << endl;
+        cout << setw(85) << "|  | /    \\ __|__ |  \\|   |  | |___ |  \\| |___|" << endl << endl << endl;
 
         for (int i = 0; i < 3; i++)
         {
-            if (i == pointer)
+            if (i == p)
             {
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
-                cout << Menu[i] << endl;
+                cout << setw(64) << Menu[i] << endl;
             }
             else
             {
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-                cout << Menu[i] << endl;
+                cout << setw(64) << Menu[i] << endl;
             }
         }
+        cout << endl;
 
         while (true)
         {
             if (GetAsyncKeyState(VK_UP) != 0)
             {
-                pointer -= 1;
-                if (pointer == -1)
+                p -= 1;
+                if (p == -1)
                 {
-                    pointer = 2;
+                    p = 2;
                 }
                 break;
             }
             else if (GetAsyncKeyState(VK_DOWN) != 0)
             {
-                pointer += 1;
-                if (pointer == 3)
+                p += 1;
+                if (p == 3)
                 {
-                    pointer = 0;
+                    p = 0;
                 }
                 break;
             }
             else if (GetAsyncKeyState(VK_RETURN) != 0)
             {
-                switch (pointer)
+                switch (p)
                 {
                 case 0:
                 {
@@ -156,7 +160,7 @@ int main()
                 case 1:
                 {
                     cout << "\n\n\nThis is the options...";
-                    Sleep(3000);
+                    Sleep(15000);
                 } break;
 
                 case 2:
