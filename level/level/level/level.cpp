@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include<iomanip>
 #include<conio.h>
 #include<stdlib.h>
@@ -6,13 +6,14 @@
 #include <windows.h>
 using namespace std;
 
-#define KEY_UP 72
+#define KEY_UP 72 // Define keys for arrow on ASCII table
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
 
+int moves = 0;
 
-char maze[10][10] = { {'#','=','#','#','#','#','#','#','#','#'},
+char maze[10][10] = { {'#','=','#','#','#','#','#','#','#','#'},// Maze area
                             {'#','.','.','.','.','#','#','#','#','#'},
                             {'#','.','#','#','.','#','.','.','.','#'},
                             {'#','.','#','#','#','#','.','#','.','#'},
@@ -27,7 +28,7 @@ void ClearArea() {
     system("CLS");
 }
 
-void MoveHandle(int move, int& X, int& Y) {
+void MoveHandle(int move, int& X, int& Y) { // Function to move player inside the maze area
     switch (move = _getch()) {
     case KEY_UP:
         if (Y - 1 >= 0) {
@@ -66,7 +67,7 @@ void MoveHandle(int move, int& X, int& Y) {
     }
 }
 
-void DisplayPlayer(int& X, int& Y) {
+void DisplayPlayer(int& X, int& Y) { // Function to display the person as "+" inside the maze area
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
             if (j == X && i == Y) {
@@ -79,16 +80,19 @@ void DisplayPlayer(int& X, int& Y) {
     }
 }
 
-bool CheckFinish(int& X, int& Y) {
+bool CheckFinish(int& X, int& Y) { // Function to check if the player is on the finish coordinates
     if (X == 7 && Y == 9) {
         return true;
     }
+    
     return false;
 }
 
+
+
 int main()
 {
-    cout << "                        ____    ____       ___    ___    ___    _____  ____    ____ _____" << endl;
+    cout << "                        ____    ____       ___    ___    ___    _____  ____    ____ _____" << endl;// Maze logo 
     cout << "   /\\  /\\        /\\        /   |          |   |  |   |  |   |     |   |       |       |" << endl;
     cout << "  /  \\/  \\      /__\\      /    |____      |___|  |___|  |   |     |   |____   |       |" << endl;
     cout << " /        \\    /    \\    /     |          |      |\\     |   |   _ |   |       |       | " << endl;
@@ -102,7 +106,7 @@ int main()
     {
         system("cls");
 
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Change menu's color
         cout << setw(80) << "            _____               ___       " << endl;
         cout << setw(85) << "|\\/|   /\\     |   |\\  |   |\\/| |    |\\  | |   |" << endl;
         cout << setw(85) << "|  |  /--\\    |   | \\ |   |  | |--- | \\ | |   |" << endl;
@@ -112,7 +116,7 @@ int main()
         {
             if (i == p)
             {
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // Change  color in menu
                 cout << setw(64) << Menu[i] << endl;
             }
             else
@@ -125,7 +129,7 @@ int main()
 
         while (true)
         {
-            if (GetAsyncKeyState(VK_UP) != 0)
+            if (GetAsyncKeyState(VK_UP) != 0) // Move with arrow inside the menu
             {
                 p -= 1;
                 if (p == -1)
@@ -153,18 +157,26 @@ int main()
                     int PlposY = 0;
                     int movement = 0;
 
-                    while (!CheckFinish(PlposX, PlposY)) {
+                    while (!CheckFinish(PlposX, PlposY)) { // Start function
                         DisplayPlayer(PlposX, PlposY);
                         MoveHandle(movement, PlposX, PlposY);
                         ClearArea();
                     }
-                    cout << "You win" << endl << "You made - " << moves << " moves";
-                    Sleep(3000);
+                    if (moves < 24) {
+                        cout << "CONGRATULATIONS!" << endl; 
+                        cout << "You won with: " << moves << " moves" << endl;
+                    }
+                    else {
+                        cout << "WASTED!" << endl;
+                        cout<< "You lost the race:("<<endl;
+                    }
+
+                    Sleep(5000);
                 } break;
 
                 case 1:
                 {
-                    cout << setw(73) << "This is the settings/instructions" << endl << endl;;
+                    cout << setw(73) << "This is the settings/instructions" << endl << endl;; // Instruction
                     cout << setw(74) << "Use the arrow key LEFT to move LEFT;" << endl;
                     cout << setw(75) << "Use the arrow key RIGHT to move RIGHT;" << endl;
                     cout << setw(72) << "Use the arrow key UP to move UP;" << endl;
