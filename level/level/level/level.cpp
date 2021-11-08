@@ -184,7 +184,7 @@ int main()
                     cout << setw(87) << "Your starting and finishing positions are marked with '=';" << endl;
                     cout << setw(74) << "Your player is marked with '+';" << endl;
                     cout << setw(78) << "The walls of the maze are marked with '#';" << endl;
-                    cout << setw(74) << "Your task is to complete the maze;" << endl;
+                    cout << setw(80) << "Your task is to complete the maze within 25 moves;" << endl;
                     cout << setw(61) << "Have fun!" << endl;
 
                     Sleep(15000);
