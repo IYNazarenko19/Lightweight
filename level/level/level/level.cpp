@@ -11,6 +11,7 @@ using namespace std;
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
 
+
 char maze[10][10] = { {'#','=','#','#','#','#','#','#','#','#'},
                             {'#','.','.','.','.','#','#','#','#','#'},
                             {'#','.','#','#','.','#','.','.','.','#'},
@@ -32,6 +33,7 @@ void MoveHandle(int move, int& X, int& Y) {
         if (Y - 1 >= 0) {
             if (maze[Y - 1][X] != '#') {
                 Y--;
+                moves++;
             }
         }
         break;
@@ -40,6 +42,7 @@ void MoveHandle(int move, int& X, int& Y) {
         if (Y + 1 <= 9) {
             if (maze[Y + 1][X] != '#') {
                 Y++;
+                moves++;
             }
         }
         break;
@@ -48,6 +51,7 @@ void MoveHandle(int move, int& X, int& Y) {
         if (X + 1 <= 9) {
             if (maze[Y][X + 1] != '#') {
                 X++;
+                moves++;
             }
         }
         break;
@@ -56,6 +60,7 @@ void MoveHandle(int move, int& X, int& Y) {
         if (X - 1 >= 0) {
             if (maze[Y][X - 1] != '#') {
                 X--;
+                moves++;
             }
         }
     }
@@ -153,7 +158,7 @@ int main()
                         MoveHandle(movement, PlposX, PlposY);
                         ClearArea();
                     }
-                    cout << "You win";
+                    cout << "You win" << endl << "You made - " << moves << " moves";
                     Sleep(3000);
                 } break;
 
